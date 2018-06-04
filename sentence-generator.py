@@ -1,3 +1,4 @@
+# coding=utf-8
 #!/usr/bin/python
 
 import re
@@ -44,7 +45,7 @@ def toHashKey(lst):
 # (some) punctuation.
 def wordlist(filename):
     f = open(filename, 'r')
-    wordlist = [fixCaps(w) for w in re.findall(r"[\w']+|[.,!?;]", f.read())]
+    wordlist = [fixCaps(w) for w in re.findall(r"[\wàâêëéèîïôûùüç']+|[.,!?;]", f.read())]
     f.close()
     return wordlist
 
